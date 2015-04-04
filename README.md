@@ -1,1 +1,1 @@
-﻿开始攻克leetcode！
+﻿开始攻克leetcode。
