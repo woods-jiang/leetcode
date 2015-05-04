@@ -1,7 +1,7 @@
 ﻿class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        
+
         if(s.size() != t.size())
             return false;
         
