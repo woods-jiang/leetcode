@@ -2,25 +2,23 @@ class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
         
-        if(nums.size() <= 1)
+        if(nums.size() <= 2)
         {
             return nums.size();
         }
         
-        vector<int>::iterator slow = nums.begin();
-        vector<int>::iterator it = nums.begin();
+        vector<int>::iterator it = nums.begin() + 2;
+        vector<int>::iterator slow = nums.begin() + 2;
         
-        for( ; (it+1) != nums.end(); ++it)
+        for(; it != nums.end(); ++it)
         {
-            if(*it != *(it+1))
+            if( *it != *(slow-2))
             {
-                slow++;
+                *slow = *it;
+                ++slow;
             }
-            *slow = *(it+1);
         }
-        slow++;
         
-        // 删除其他多余的元素
         while(slow != nums.end())
         {
             nums.erase(slow);
